@@ -77,5 +77,22 @@ public class Student {
 	public void setId(int id) {
 		this.id = id;
 	}
+	public List<Module> getModules() {
+		return modules;
+	}
+	public void setModules(List<Module> modules) {
+		this.modules = modules;
+	}
+	public List<CourseProgramme> getCourse() {
+		return course;
+	}
+	public void setCourse(List<CourseProgramme> course) {
+		this.course = course;
+	}
+	@Override
+	public String toString() {
+		return "Student [name=" + name + ", age=" + age + ", dob=" + dob + ", id=" + id + ", username=" + username
+				+ ", modules=" + modules + ", course=" + course + "]";
+	}
 
 }

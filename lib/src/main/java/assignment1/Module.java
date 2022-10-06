@@ -18,6 +18,8 @@ public class Module {
 	}
 
 
+	
+
 	public String getName() {
 		return name;
 	}
@@ -47,8 +49,27 @@ public class Module {
 	}
 
 
+	public List<CourseProgramme> getCourse() {
+		return course;
+	}
+
+
+
+
+	public void setCourse(List<CourseProgramme> course) {
+		this.course = course;
+	}
 	
 
-	
+	@Override
+	public String toString() {
+		return "Module [name=" + name + ", students=" + students + ", lecturer=" + lecturer + ", course=" + course
+				+ "]";
+	}
+
+
+
+
+
 
 }

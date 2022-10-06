@@ -42,8 +42,9 @@ public class Lecturer {
 	public String getUsername() {
 		
 		return ""+name+""+age;
-		
+		  
 	}
+	
 	public String getName() {
 		return name;
 	}
@@ -75,6 +76,22 @@ public class Lecturer {
 	public void setId(int id) {
 		this.id = id;
 	}
-
+	public List<Module> getModules() {
+		return modules;
+	}
+	public void setModules(List<Module> modules) {
+		this.modules = modules;
+	}
+	public List<CourseProgramme> getCourses() {
+		return courses;
+	}
+	public void setCourses(List<CourseProgramme> courses) {
+		this.courses = courses;
+	}
+	@Override
+	public String toString() {
+		return "Lecturer [name=" + name + ", age=" + age + ", dob=" + dob + ", id=" + id + ", username=" + username
+				+ ", modules=" + modules + ", courses=" + courses + "]";
+	}
 	
 }
