@@ -6,10 +6,10 @@ public class Module {
 	public String name;
 	public List<Student> students;
 	public List<Lecturer> lecturer;
-	public CourseProgramme course;
+	public List<CourseProgramme> course;
 
 	public Module(String name, List<Student> students, List<Lecturer> lecturer,
-			CourseProgramme course) {
+			List<CourseProgramme> course) {
 		super();
 		this.name = name;
 		this.students = students;
@@ -47,23 +47,7 @@ public class Module {
 	}
 
 
-	public CourseProgramme getCourse() {
-		return course;
-	}
-
-
-	public void setCourse(CourseProgramme course) {
-		this.course = course;
-	}
-
-
-	@Override
-	public String toString() {
-		return "Module [name=" + name + ", students=" + students + ", lecturer=" + lecturer + ", course=" + course
-				+ "]";
-	}
-
-
+	
 
 	
 

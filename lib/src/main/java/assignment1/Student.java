@@ -13,13 +13,14 @@ public class Student {
 	public int id;
 	public String username;
 	public List<Module> modules;
-	public CourseProgramme course;
+	public List<CourseProgramme> course;
 
-	public Student(String name, int age, String dob, int id, List<Module> modules,
-			CourseProgramme course) {
+	public Student(String name, int age, String dob, int id,
+			List<CourseProgramme> course) {
 		super();
 		this.name = name;
 		this.age = age;		
+		
 	    try {
 			this.dob=new SimpleDateFormat("dd/MM/yyyy").parse(dob);
 		} catch (ParseException e) {
@@ -28,8 +29,17 @@ public class Student {
 		}  
 		this.id = id;
 		this.username = getUsername();
-		this.modules = modules;
-		this.course = course;
+		this.course=course;
+		this.modules = new ArrayList<Module>();
+		 int count = 0; 	
+		 while (course.size() > count) {
+			 CourseProgramme j	= course.get(count);
+			 modules.addAll(j.getModule());
+		         count++;
+		      }
+
+	
+	
 	}
 	public String getUsername() {
 		
@@ -67,23 +77,5 @@ public class Student {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public List<Module> getModules() {
-		return modules;
-	}
-	public void setModules(List<Module> modules) {
-		this.modules = modules;
-	}
-	public CourseProgramme getCourse() {
-		return course;
-	}
-	public void setCourse(CourseProgramme course) {
-		this.course = course;
-	}
-	@Override
-	public String toString() {
-		return "Student [name=" + name + ", age=" + age + ", dob=" + dob + ", id=" + id + ", username=" + username
-				+ ", modules=" + modules + ", course=" + course + "]";
-	}
 
-	
 }

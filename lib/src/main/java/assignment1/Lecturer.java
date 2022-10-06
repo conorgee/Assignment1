@@ -14,10 +14,10 @@ public class Lecturer {
 	public int id;
 	public String username;
 	public List<Module> modules;
-	public CourseProgramme course;
+	public List<CourseProgramme> courses;
 
-	public Lecturer(String name, int age, String dob, int id, List<Module> modules,
-			CourseProgramme courses)  {
+	public Lecturer(String name, int age, String dob, int id,
+			List<CourseProgramme> courses)  {
 		super();
 		this.name = name;
 		this.age = age;
@@ -28,9 +28,16 @@ public class Lecturer {
 			e.printStackTrace();
 		} 
 		this.id = id;
-		this.username= getUsername();
-		this.modules = modules;
-		this.course = courses;
+		this.username= getUsername();	
+		this.courses = courses;
+		this.modules = new ArrayList<Module>();
+		 int count = 0; 	
+		 while (courses.size() > count) {
+			 CourseProgramme j	= courses.get(count);
+			 modules.addAll(j.getModule());
+		         count++;
+		      }
+
 	}
 	public String getUsername() {
 		
@@ -68,22 +75,6 @@ public class Lecturer {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public List<Module> getModules() {
-		return modules;
-	}
-	public void setModules(List<Module> modules) {
-		this.modules = modules;
-	}
-	public CourseProgramme getCourse() {
-		return course;
-	}
-	public void setCourse(CourseProgramme course) {
-		this.course = course;
-	}
-	@Override
-	public String toString() {
-		return "Lecturer [name=" + name + ", age=" + age + ", dob=" + dob + ", id=" + id + ", username=" + username
-				+ ", modules=" + modules + ", course=" + course + "]";
-	}
 
+	
 }
