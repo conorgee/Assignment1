@@ -99,7 +99,7 @@ public class Student {
 	@Override
 	public String toString() {
 		modules.clear();
-		int count = 0; 	
+		int count = 0; 
 		 while (course.size() > count) {
 			 
 			 CourseProgramme j	= course.get(count);
@@ -107,7 +107,7 @@ public class Student {
 		         count++;
 		      }
 		return "Student [name=" + name + ", age=" + age + ", dob=" + dob + ", id=" + id + ", username=" + username
-				+ ", modules=" + getModules() + " course=" + getCourse() + "]";
+				+ ", modules=" + getModules() + " course=" + getCourse() + "]\n";
 	}
 	
 

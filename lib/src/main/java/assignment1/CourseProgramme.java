@@ -95,7 +95,7 @@ public class CourseProgramme {
 	@Override
 	public String toString() {
 		return "CourseProgramme [name=" + name + ", module=" + getModuleString() + ", student=" + getStudent() + ", startDate="
-				+ startDate + ", endDate=" + endDate + "]";
+				+ startDate + ", endDate=" + endDate + "]\n";
 	}
 
 
