@@ -28,19 +28,8 @@ public class Module {
 		this.name = name;
 	}
 
-
-	public List<Student> getStudents() {
-		return students;
-	}
-
-
 	public void setStudents(List<Student> students) {
 		this.students = students;
-	}
-
-
-	public List<Lecturer> getLecturer() {
-		return lecturer;
 	}
 
 
@@ -49,21 +38,44 @@ public class Module {
 	}
 
 
-	public List<CourseProgramme> getCourse() {
-		return course;
-	}
-
-
-
 
 	public void setCourse(List<CourseProgramme> course) {
 		this.course = course;
 	}
 	
+	public String getLecturer() {
+		String ii = "";
+		Lecturer s;
+		for (int i = 0; i < lecturer.size(); i++) {
+          s= lecturer.get(i);
+          ii+=s.getName()+", ";
+          }
+		return ii;
+	}
+	
+	public String getStudent() {
+		String ii = "";
+		Student s;
+		for (int i = 0; i < students.size(); i++) {
+          s= students.get(i);
+          ii+=s.getName()+", ";
+          }
+		return ii;
+	}
+	
+	public String getCourse() {
+		String ii = "";
+		CourseProgramme s;
+		for (int i = 0; i < course.size(); i++) {
+          s= course.get(i);
+          ii+=s.getName()+", ";
+          }
+		return ii;
+	}
 
 	@Override
 	public String toString() {
-		return "Module [name=" + name + ", students=" + students + ", lecturer=" + lecturer + ", course=" + course
+		return "Module [name=" + name + ", students=" + getStudent() + ", lecturer=" + getLecturer() + ", course=" + getCourse()
 				+ "]";
 	}
 

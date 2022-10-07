@@ -12,7 +12,7 @@ public class Student {
 	public Date dob;
 	public int id;
 	public String username;
-	public List<Module> modules;
+	public ArrayList<String> modules = new ArrayList<String>();
 	public List<CourseProgramme> course;
 
 	public Student(String name, int age, String dob, int id,
@@ -30,14 +30,7 @@ public class Student {
 		this.id = id;
 		this.username = getUsername();
 		this.course=course;
-		this.modules = new ArrayList<Module>();
-		 int count = 0; 	
-		 while (course.size() > count) {
-			 CourseProgramme j	= course.get(count);
-			 modules.addAll(j.getModule());
-		         count++;
-		      }
-
+		
 	
 	
 	}
@@ -77,22 +70,45 @@ public class Student {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public List<Module> getModules() {
-		return modules;
+	public String getModules() {
+		String ii = "";
+		String s;
+		for (int i = 0; i < modules.size(); i++) {
+          s= modules.get(i);
+          ii+=s+", ";
+          }
+		return ii;
 	}
-	public void setModules(List<Module> modules) {
+
+	public String getCourse() {
+		String ii = "";
+		CourseProgramme s;
+		for (int i = 0; i < course.size(); i++) {
+          s= course.get(i);
+          ii+=s.getName()+", ";
+          }
+		return ii;
+	}
+
+	public void setModules(ArrayList<String> modules) {
 		this.modules = modules;
-	}
-	public List<CourseProgramme> getCourse() {
-		return course;
 	}
 	public void setCourse(List<CourseProgramme> course) {
 		this.course = course;
 	}
 	@Override
 	public String toString() {
+		modules.clear();
+		int count = 0; 	
+		 while (course.size() > count) {
+			 
+			 CourseProgramme j	= course.get(count);
+			 modules.add(j.getModuleString());
+		         count++;
+		      }
 		return "Student [name=" + name + ", age=" + age + ", dob=" + dob + ", id=" + id + ", username=" + username
-				+ ", modules=" + modules + ", course=" + course + "]";
+				+ ", modules=" + getModules() + " course=" + getCourse() + "]";
 	}
+	
 
 }

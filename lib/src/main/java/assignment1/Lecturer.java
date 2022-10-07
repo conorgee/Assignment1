@@ -13,7 +13,7 @@ public class Lecturer {
 	public Date dob;
 	public int id;
 	public String username;
-	public List<Module> modules;
+	public ArrayList<String> modules = new ArrayList<String>();
 	public List<CourseProgramme> courses;
 
 	public Lecturer(String name, int age, String dob, int id,
@@ -30,14 +30,8 @@ public class Lecturer {
 		this.id = id;
 		this.username= getUsername();	
 		this.courses = courses;
-		this.modules = new ArrayList<Module>();
-		 int count = 0; 	
-		 while (courses.size() > count) {
-			 CourseProgramme j	= courses.get(count);
-			 modules.addAll(j.getModule());
-		         count++;
-		      }
 
+	
 	}
 	public String getUsername() {
 		
@@ -76,22 +70,44 @@ public class Lecturer {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public List<Module> getModules() {
-		return modules;
+	public String getModules() {
+		String ii = "";
+		String s;
+		for (int i = 0; i < modules.size(); i++) {
+          s= modules.get(i);
+          ii+=s+", ";
+          }
+		return ii;
 	}
-	public void setModules(List<Module> modules) {
+
+	public String getCourse() {
+		String ii = "";
+		CourseProgramme s;
+		for (int i = 0; i < courses.size(); i++) {
+          s= courses.get(i);
+          ii+=s.getName()+", ";
+          }
+		return ii;
+	}
+	public void setModules(ArrayList<String> modules) {
 		this.modules = modules;
 	}
-	public List<CourseProgramme> getCourses() {
-		return courses;
-	}
+
 	public void setCourses(List<CourseProgramme> courses) {
 		this.courses = courses;
 	}
 	@Override
 	public String toString() {
+		modules.clear();
+		int count = 0; 	
+		 while (courses.size() > count) {
+			 
+			 CourseProgramme j	= courses.get(count);
+			 modules.add(j.getModuleString());
+		         count++;
+		      }
 		return "Lecturer [name=" + name + ", age=" + age + ", dob=" + dob + ", id=" + id + ", username=" + username
-				+ ", modules=" + modules + ", courses=" + courses + "]";
+				+ ", modules=" + getModules() + " courses=" + getCourse() + "]";
 	}
 	
 }
