@@ -106,8 +106,8 @@ public class Student {
 			 modules.add(j.getModuleString());
 		         count++;
 		      }
-		return "Student [name=" + name + ", age=" + age + ", dob=" + dob + ", id=" + id + ", username=" + username
-				+ ", modules=" + getModules() + " course=" + getCourse() + "]\n";
+		return "Student name=" + name + ", age=" + age + ", dob=" + dob + ", id=" + id + ", username=" + username
+				+ ", modules=" + getModules() + " course=" + getCourse() + "\n";
 	}
 	
 

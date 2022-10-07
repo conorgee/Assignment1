@@ -106,8 +106,8 @@ public class Lecturer {
 			 modules.add(j.getModuleString());
 		         count++;
 		      }
-		return "Lecturer [name=" + name + ", age=" + age + ", dob=" + dob + ", id=" + id + ", username=" + username
-				+ ", modules=" + getModules() + " courses=" + getCourse() +"]\n";
+		return "Lecturer name=" + name + ", age=" + age + ", dob=" + dob + ", id=" + id + ", username=" + username
+				+ ", modules=" + getModules() + " courses=" + getCourse() +"\n";
 	}
 	
 }

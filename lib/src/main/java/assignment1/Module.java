@@ -75,8 +75,8 @@ public class Module {
 
 	@Override
 	public String toString() {
-		return "Module [name=" + name + ", students=" + getStudent() + ", lecturer=" + getLecturer() + ", course=" + getCourse()
-				+ "]\n";
+		return "Module name=" + name + ", students=" + getStudent() + ", lecturer=" + getLecturer() + ", course=" + getCourse()
+				+ "\n";
 	}
 
 
