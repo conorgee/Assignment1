@@ -2,12 +2,11 @@ package assignment1;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.text.ParseException;
-import java.util.*;
-
 import org.joda.time.DateTime;
 import org.junit.jupiter.api.*;
-import assignment1.Module;
+import java.util.ArrayList;
+import java.util.List;
+
 
 class test {
 //	Lecturer(String name, int age, String dob, int id, List<Module> modules,
